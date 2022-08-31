@@ -46,6 +46,9 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 This task includes:
-1- the base task book library page and search page
-2- drag and drop books for a specific section
-3 details page for each book with details
+1- the base task book library consists of 3 pages:
+main page: - The main page shows three shelves for books. Each book is shown on the correct shelf, along with its title and all of its authors. Each bookshelf is a reusable component. - The main page shows a control that allows users to move books between shelves. The control should be tied to each book instance. The functionality of moving a book to a different shelf works correctly. - When the browser is refreshed, the same information is displayed on the page. - (BONUS) Contains drag-and-drop functionality to move books between shelves.
+search page: - The search page has a search input field - Search results on the search page allow the user to select “Currently Reading”, “Want to Read”, or “Read” to place the book in a certain shelf. - When an item is categorized on the search page and the user navigates to the main page, it appears on that shelf in the main page.
+details page: - (BONUS) This page to display more information about any particular book.
+
+I attached some evidence in evidence folder
