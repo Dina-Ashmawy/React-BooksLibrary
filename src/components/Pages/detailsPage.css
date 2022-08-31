@@ -1,0 +1,13 @@
+.dataContainer {
+    padding: 0 15% 10px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.itemContainer {
+    background: lightgray;
+    color: darkgreen;
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
