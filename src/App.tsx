@@ -1,16 +1,42 @@
 import "./App.css";
-import { useState } from "react";
-import LibraryPage from "./components/LibraryPage";
-import SearchPage from "./components/SearchPage";
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import * as BooksAPI from "./BooksAPI";
+import { IBook } from "./models";
+
 
 function App() {
-  const [showSearchPage, setShowSearchpage] = useState(false);
+  const LibraryPage = React.lazy(() => import('./components/Pages/libraryPage'));
+  const SearchPage = React.lazy(() => import('./components/Pages/searchPage'));
+  const DetailsPage = React.lazy(() => import('./components/Pages/detailsPage'));
+  const NotFound = React.lazy(() => import('./components/Pages/notFound'));
+
+
+  var initialBooks: IBook[] = []
+  const [books, setBooks] = useState(initialBooks);
+  const addBook = (book: IBook) => {
+    setBooks([...books.filter((item) => item.id !== book.id), book]);
+  };
+
+  useEffect(() => {
+    BooksAPI.getAll().then((data) => setBooks(data));
+  }, []);
+
 
   return (
-    <div className="app">
-      {showSearchPage ?
-        <SearchPage />
-        : <LibraryPage />}
+    <div>
+      <Suspense fallback={<span>Loading ...</span>}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<LibraryPage books={books} addBook={addBook} />} />
+            <Route path="/search" element={<SearchPage books={books} addBook={addBook} />} />
+            <Route path="/details" element={<DetailsPage />} />
+            <Route path="*" element={<NotFound />} />
+
+          </Routes>
+        </Router>
+      </Suspense>
     </div>
   );
 }
