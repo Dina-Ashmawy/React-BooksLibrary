@@ -1,4 +1,4 @@
-import './detailsPage.css'
+import './index.css'
 import { useLocation } from 'react-router-dom';
 import { IBookDetails } from '../../models';
 

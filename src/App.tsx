@@ -7,10 +7,10 @@ import { IBook } from "./models";
 
 
 function App() {
-  const LibraryPage = React.lazy(() => import('./components/Pages/libraryPage'));
-  const SearchPage = React.lazy(() => import('./components/Pages/searchPage'));
-  const DetailsPage = React.lazy(() => import('./components/Pages/detailsPage'));
-  const NotFound = React.lazy(() => import('./components/Pages/notFound'));
+  const LibraryPage = React.lazy(() => import('./Pages/library'));
+  const SearchPage = React.lazy(() => import('./Pages/searchPage'));
+  const DetailsPage = React.lazy(() => import('./Pages/details'));
+  const NotFound = React.lazy(() => import('./Pages/notFound'));
 
 
   var initialBooks: IBook[] = []

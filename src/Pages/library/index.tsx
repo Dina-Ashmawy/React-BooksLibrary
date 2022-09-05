@@ -1,7 +1,7 @@
-import BookShelf from "../UI/bookShelf";
+import BookShelf from "../../components/bookShellf";
 import { Link } from "react-router-dom";
 import { IBook } from '../../models';
-import './libraryPage.css';
+import './index.css';
 
 type IProps = {
     books: IBook[];

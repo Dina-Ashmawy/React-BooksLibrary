@@ -1,5 +1,5 @@
-import './book.css';
-import { IBook } from './../../models';
+import './index.css';
+import { IBook } from '../../models';
 import * as BooksAPI from '../../BooksAPI';
 import { Link } from "react-router-dom";
 

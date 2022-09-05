@@ -1,8 +1,8 @@
-import './searchPage.css';
+import './index.css';
 import { Link } from "react-router-dom";
 import * as BooksAPI from "../../BooksAPI";
 import { useEffect, useState, useMemo } from "react";
-import Book from "../UI/book";
+import Book from "../../components/book";
 import debounce from "lodash.debounce";
 import { IBook, EventModel } from '../../models';
 

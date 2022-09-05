@@ -1,7 +1,7 @@
-import './bookShelf.css';
-import Book from "./book";
+import './index.css';
+import Book from "../book";
 import * as BooksAPI from "../../BooksAPI";
-import { IBook } from './../../models';
+import { IBook } from '../../models';
 import camelCase from "lodash.camelcase";
 
 type IProps = {
