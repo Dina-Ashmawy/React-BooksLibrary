@@ -1,7 +1,7 @@
 import { IBook } from "./models";
 
-const api = "https://reactnd-books-api.udacity.com";
-
+const REACT_APP_API_ENDPOINT = process.env.REACT_APP_BOOKS_API_URL;
+console.log(REACT_APP_API_ENDPOINT)
 let token = localStorage.token;
 
 if (!token) token = localStorage.token = Math.random().toString(36).substr(-8);
@@ -12,18 +12,18 @@ const headers = {
 };
 
 export const get = (bookId: string) =>
-  fetch(`${api}/books/${bookId}`, { headers })
+  fetch(`${REACT_APP_API_ENDPOINT}/books/${bookId}`, { headers })
     .then((res) => res.json())
     .then((data) => data.book);
 
 export const getAll = () =>
-  fetch(`${api}/books`, { headers })
+  fetch(`${REACT_APP_API_ENDPOINT}/books`, { headers })
     .then((res) => res.json())
     .then((data) => data.books);
 
 export const update = (book: IBook, shelf: string) =>
 
-  fetch(`${api}/books/${book.id}`, {
+  fetch(`${REACT_APP_API_ENDPOINT}/books/${book.id}`, {
     method: "PUT",
     headers: {
       ...headers,
@@ -33,7 +33,7 @@ export const update = (book: IBook, shelf: string) =>
   }).then((res) => res.json()).then(data => console.log(data));
 
 export const search = (query: string, maxResults: number) =>
-  fetch(`${api}/search`, {
+  fetch(`${REACT_APP_API_ENDPOINT}/search`, {
     method: "POST",
     headers: {
       ...headers,
