@@ -16,7 +16,12 @@ function App() {
   var initialBooks: IBook[] = []
   const [books, setBooks] = useState(initialBooks);
   const addBook = (book: IBook) => {
-    setBooks([...books.filter((item) => item.id !== book.id), book]);
+    if (books.includes(book)) {
+      return;
+    }
+    else {
+      setBooks([...books, book])
+    }
   };
 
   useEffect(() => {
