@@ -26,7 +26,7 @@ function SearchPage({ books, addBook }: IProps) {
             setSearchedBooks([]);
         }
     }, [query]);
-    function handleSearch(event: EventModel) {
+    const handleSearch = (event: EventModel) => {
         setQuery(event.target.value);
     }
     const debouncedHandleSearch = useMemo(() => debounce(handleSearch, 400), []);

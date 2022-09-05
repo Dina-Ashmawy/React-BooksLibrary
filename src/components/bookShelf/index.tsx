@@ -12,7 +12,7 @@ type IProps = {
 
 
 function BookShelf({ books, shelfTitle, addBook }: IProps) {
-    function handleDrop(event: any) {
+    const handleDrop = (event: any) => {
         let draggedBook = JSON.parse(event.dataTransfer.getData("book"));
         let shelfName = camelCase(shelfTitle);
         if (!(draggedBook.shelf === shelfName)) {

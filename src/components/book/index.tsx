@@ -9,14 +9,14 @@ type IProps = {
 }
 
 function Book({ book, addBook }: IProps) {
-    function changeShelf(event: any) {
+    const changeShelf = (event: any) => {
         let shelf = event.target.value;
         BooksAPI.update(book, shelf);
         book.shelf = shelf;
         addBook(book);
     }
 
-    function handleDragStart(event: any) {
+    const handleDragStart = (event: any) => {
         event.dataTransfer.setData("book", JSON.stringify(book));
     }
 
