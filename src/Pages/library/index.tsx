@@ -1,4 +1,4 @@
-import BookShelf from "../../components/bookShellf";
+import BookShelf from "../../components/bookShelf";
 import { Link } from "react-router-dom";
 import { IBook } from '../../models';
 import './index.css';
